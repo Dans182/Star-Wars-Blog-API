@@ -8,12 +8,15 @@
       flex: 0 0 auto;
       width: 250px;
       background-color: rgba(5, 5, 5, 0.889);
+      opacity: 90%;
       color: #fff;
       margin-left: 5px;
       margin-right: 5px;
     }
  
- body {overflow: hidden}
+ body {overflow: hidden;
+    background-image: url("https://img.wallpapersafari.com/desktop/1600/900/27/28/JTx5Gq.jpg");
+color: white}
 
 
 
@@ -36,3 +39,6 @@
     text-decoration: none;
   }
  
+.btn2:hover {
+    color: red;
+}
