@@ -12,7 +12,8 @@ export const Home = () => {
   return (
     <div className="text-center mt-5">
       <h1>Planets</h1>
-        <div className="row scrolling-wrapper-flexbox">
+	  <div className="container">
+        <div className="row scrolling-wrapper-flexbox ">
           {store.planets.map((planet, i) => {
             return (
               <div key={i} className="card">
@@ -23,14 +24,15 @@ export const Home = () => {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#" className="btn btn-primary">
+                  <button href="#" className="btn btn-grad">
                     More info
-                  </a>
+                  </button>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
+	  </div>
   );
 };
