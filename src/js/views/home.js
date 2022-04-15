@@ -9,6 +9,7 @@ export const Home = () => {
   useEffect(() => {
     //actions.getCharacters();
     //actions.getPlanets();
+    //actions.getVehicles()
   }, []);
   return (
   // CHARACTERS
@@ -22,7 +23,7 @@ export const Home = () => {
               <div key={character.uid} className="card p-1">
                 <img
                   src={
-                    "https://starwars-visualguide.com/assets/img/people/" +
+                    "https://starwars-visualguide.com/assets/img/characters/" +
                     character.uid +
                     ".jpg"
                   }
@@ -32,16 +33,16 @@ export const Home = () => {
                 <div className="card-body p-1">
                   <h5 className="card-title">{character.properties.name}</h5>
                   <p className="card-text m-0">
-                    Diameter: {character.properties.height}
+                    Height: {character.properties.height}
                   </p>
                   <p className="card-text m-0">
-                    Population: {character.properties.mass}
+                    Mass: {character.properties.mass}
                   </p>
                   <p className="card-text m-0">
-                    Climate: {character.properties.hair_color}
+                    Hair color: {character.properties.hair_color}
                   </p>
                   <p className="card-text m-0">
-                    Terrain: {character.properties.skin_color}
+                    Skin Color: {character.properties.skin_color}
                   </p>
 
                   <div className="rounded mx-auto d-block">
@@ -134,42 +135,42 @@ export const Home = () => {
       <h1>Vehicles</h1>
       <div className="container">
         <div className="row scrolling-wrapper-flexbox ">
-          {store.planets.map((planet) => {
+          {store.vehicles.map((vehicle) => {
             return (
-              <div key={planet.uid} className="card p-1">
+              <div key={vehicle.uid} className="card p-1">
                 <img
                   src={
-                    "https://starwars-visualguide.com/assets/img/planets/" +
-                    planet.uid +
+                    "https://starwars-visualguide.com/assets/img/vehicles/" +
+                    vehicle.uid +
                     ".jpg"
                   }
                   className="card-img-top"
                   alt="..."
                 />
                 <div className="card-body p-1">
-                  <h5 className="card-title">{planet.properties.name}</h5>
+                  <h5 className="card-title">{vehicle.properties.name}</h5>
                   <p className="card-text m-0">
-                    Diameter: {planet.properties.diameter}
+                    Class: {vehicle.properties.vehicle_class} 
                   </p>
                   <p className="card-text m-0">
-                    Population: {planet.properties.population}
+                    Crew: {vehicle.properties.crew} 
                   </p>
                   <p className="card-text m-0">
-                    Climate: {planet.properties.climate}
+                    Passengers: {vehicle.properties.passengers} 
                   </p>
                   <p className="card-text m-0">
-                    Terrain: {planet.properties.terrain}
+                    Cost: {vehicle.properties.cost_in_credits} 
                   </p>
 
                   <div className="rounded mx-auto d-block">
-                    <Link to={/planets/ + planet.uid}>
+                    <Link to={/planets/ + vehicle.uid}>
                       <button className="btn btn-grad">More info</button>
                     </Link>
                     <button
                       href="#"
                       className="btn btn2 btn-grad"
                       onClick={() =>
-                        actions.updateFavorites(planet.properties.name)
+                        actions.updateFavorites(vehicle.properties.name)
                       }
                     >
                       <i className="fa fa-heart" />

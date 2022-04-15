@@ -406,14 +406,257 @@ const getState = ({ getStore, getActions, setStore }) => {
           "__v": 0
         }
       ],
+      vehicles: [
+        {
+          "properties": {
+            "model": "Digger Crawler",
+            "vehicle_class": "wheeled",
+            "manufacturer": "Corellia Mining Corporation",
+            "cost_in_credits": "150000",
+            "length": "36.8 ",
+            "crew": "46",
+            "passengers": "30",
+            "max_atmosphering_speed": "30",
+            "cargo_capacity": "50000",
+            "consumables": "2 months",
+            "films": [],
+            "pilots": [],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "Sand Crawler",
+            "url": "https://www.swapi.tech/api/vehicles/4"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f97fc",
+          "uid": "4",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "X-34 landspeeder",
+            "vehicle_class": "repulsorcraft",
+            "manufacturer": "SoroSuub Corporation",
+            "cost_in_credits": "10550",
+            "length": "3.4 ",
+            "crew": "1",
+            "passengers": "1",
+            "max_atmosphering_speed": "250",
+            "cargo_capacity": "5",
+            "consumables": "unknown",
+            "films": [],
+            "pilots": [],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "X-34 landspeeder",
+            "url": "https://www.swapi.tech/api/vehicles/7"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f97fd",
+          "uid": "7",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "T-16 skyhopper",
+            "vehicle_class": "repulsorcraft",
+            "manufacturer": "Incom Corporation",
+            "cost_in_credits": "14500",
+            "length": "10.4 ",
+            "crew": "1",
+            "passengers": "1",
+            "max_atmosphering_speed": "1200",
+            "cargo_capacity": "50",
+            "consumables": "0",
+            "films": [],
+            "pilots": [],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "T-16 skyhopper",
+            "url": "https://www.swapi.tech/api/vehicles/6"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f97fe",
+          "uid": "6",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "Twin Ion Engine/Ln Starfighter",
+            "vehicle_class": "starfighter",
+            "manufacturer": "Sienar Fleet Systems",
+            "cost_in_credits": "unknown",
+            "length": "6.4",
+            "crew": "1",
+            "passengers": "0",
+            "max_atmosphering_speed": "1200",
+            "cargo_capacity": "65",
+            "consumables": "2 days",
+            "films": [],
+            "pilots": [],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "TIE/LN starfighter",
+            "url": "https://www.swapi.tech/api/vehicles/8"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f97ff",
+          "uid": "8",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "t-47 airspeeder",
+            "vehicle_class": "airspeeder",
+            "manufacturer": "Incom corporation",
+            "cost_in_credits": "unknown",
+            "length": "4.5",
+            "crew": "2",
+            "passengers": "0",
+            "max_atmosphering_speed": "650",
+            "cargo_capacity": "10",
+            "consumables": "none",
+            "films": [],
+            "pilots": [
+              "https://www.swapi.tech/api/people/1",
+              "https://www.swapi.tech/api/people/18"
+            ],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "Snowspeeder",
+            "url": "https://www.swapi.tech/api/vehicles/14"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f9800",
+          "uid": "14",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "All Terrain Armored Transport",
+            "vehicle_class": "assault walker",
+            "manufacturer": "Kuat Drive Yards, Imperial Department of Military Research",
+            "cost_in_credits": "unknown",
+            "length": "20",
+            "crew": "5",
+            "passengers": "40",
+            "max_atmosphering_speed": "60",
+            "cargo_capacity": "1000",
+            "consumables": "unknown",
+            "films": [],
+            "pilots": [],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "AT-AT",
+            "url": "https://www.swapi.tech/api/vehicles/18"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f9801",
+          "uid": "18",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "TIE/sa bomber",
+            "vehicle_class": "space/planetary bomber",
+            "manufacturer": "Sienar Fleet Systems",
+            "cost_in_credits": "unknown",
+            "length": "7.8",
+            "crew": "1",
+            "passengers": "0",
+            "max_atmosphering_speed": "850",
+            "cargo_capacity": "none",
+            "consumables": "2 days",
+            "films": [],
+            "pilots": [],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "TIE bomber",
+            "url": "https://www.swapi.tech/api/vehicles/16"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f9802",
+          "uid": "16",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "All Terrain Scout Transport",
+            "vehicle_class": "walker",
+            "manufacturer": "Kuat Drive Yards, Imperial Department of Military Research",
+            "cost_in_credits": "unknown",
+            "length": "2",
+            "crew": "2",
+            "passengers": "0",
+            "max_atmosphering_speed": "90",
+            "cargo_capacity": "200",
+            "consumables": "none",
+            "films": [],
+            "pilots": [
+              "https://www.swapi.tech/api/people/13"
+            ],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "AT-ST",
+            "url": "https://www.swapi.tech/api/vehicles/19"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f9803",
+          "uid": "19",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "Storm IV Twin-Pod",
+            "vehicle_class": "repulsorcraft",
+            "manufacturer": "Bespin Motors",
+            "cost_in_credits": "75000",
+            "length": "7",
+            "crew": "2",
+            "passengers": "0",
+            "max_atmosphering_speed": "1500",
+            "cargo_capacity": "10",
+            "consumables": "1 day",
+            "films": [],
+            "pilots": [],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "Storm IV Twin-Pod cloud car",
+            "url": "https://www.swapi.tech/api/vehicles/20"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f9804",
+          "uid": "20",
+          "__v": 0
+        },
+        {
+          "properties": {
+            "model": "Modified Luxury Sail Barge",
+            "vehicle_class": "sail barge",
+            "manufacturer": "Ubrikkian Industries Custom Vehicle Division",
+            "cost_in_credits": "285000",
+            "length": "30",
+            "crew": "26",
+            "passengers": "500",
+            "max_atmosphering_speed": "100",
+            "cargo_capacity": "2000000",
+            "consumables": "Live food tanks",
+            "films": [],
+            "pilots": [],
+            "created": "2020-09-17T17:46:31.415Z",
+            "edited": "2020-09-17T17:46:31.415Z",
+            "name": "Sail barge",
+            "url": "https://www.swapi.tech/api/vehicles/24"
+          },
+          "description": "A vehicle",
+          "_id": "5f63a160cf50d100047f9805",
+          "uid": "24",
+          "__v": 0
+        }
+      ],
       favorites: [],
     },
-
+    
     actions: {
-      updateFavorites: (like) => {
-        setStore({ favorites: [...getStore().favorites, like] });
-      },
-
       getPlanets: async () => {
         const response = await fetch("https://www.swapi.tech/api/planets");
         const dataPlanets = await response.json();
@@ -458,6 +701,32 @@ const getState = ({ getStore, getActions, setStore }) => {
         const dataCharactersInfo = await response.json();
         return dataCharactersInfo.result;
       },
+
+      getVehicles: async () => {
+        const response = await fetch("https://www.swapi.tech/api/vehicles");
+        const dataVehicles = await response.json();
+        let arrayPrueba = [];
+        for (let i = 0; i < dataVehicles.results.length; i++) {
+          const prueba = await getActions().getVehiclesInfo(
+            dataVehicles.results[i].uid
+          );
+          arrayPrueba.push(prueba);
+        }
+        console.log(arrayPrueba);
+        setStore({ vehicles: arrayPrueba });
+      },
+      getVehiclesInfo: async (e) => {
+        const response = await fetch("https://www.swapi.tech/api/vehicles/" + e);
+        const dataVehiclesInfo = await response.json();
+        return dataVehiclesInfo.result;
+      },
+
+      
+
+        updateFavorites: (like) => {
+          setStore({ favorites: [...getStore().favorites, like] });
+        },
+
     },
   };
 };
