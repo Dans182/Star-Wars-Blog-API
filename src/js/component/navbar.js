@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import starWarsLogo from "../../img/starwars-logo.png";
 
+import { Context } from "../store/appContext";
+
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+
+
   return (
     /*LOGO*/
 
@@ -26,11 +31,15 @@ export const Navbar = () => {
               Favorites
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li>
-                <a className="dropdown-item" href="#">
-                  (empty)
-                </a>
-              </li>
+            
+            {store.favorites.map((like, i) => {
+            return (
+              <li key={i}>
+                {like}
+
+              </li>)})}
+
+      
             </ul>
           </div>
         </Link>

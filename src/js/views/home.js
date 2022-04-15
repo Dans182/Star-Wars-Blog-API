@@ -2,63 +2,187 @@ import React, { useContext, useEffect } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-// import rigoImage from "../../img/planetsimg/2.webp";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    // actions.getPlanets();
-
-    // actions.getPlanetsImg();
+    //actions.getCharacters();
+    //actions.getPlanets();
   }, []);
-
-  {
-    store.planets.map((planetImg, j) => {
-      return (
-        <div key={j}>
-          <img src="" className="card-img-top" alt="..." />
-        </div>
-      );
-    });
-  }
-
   return (
-    <div className="text-center mt-5">
-      <h1>Planets</h1>
+  // CHARACTERS
+  <div>
+    <div className="text-center mt-3">
+      <h1>Characters</h1>
       <div className="container">
-
         <div className="row scrolling-wrapper-flexbox ">
-          {store.planets.map( (planet, i) => {
- 
+          {store.characters.map((character) => {
             return (
-              <div key={i} className="card">
-                <img src={"https://starwars-visualguide.com/assets/img/planets/" + planet.uid + ".jpg"}
-                 className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{planet.properties.name}</h5>
-                  
-				  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+              <div key={character.uid} className="card p-1">
+                <img
+                  src={
+                    "https://starwars-visualguide.com/assets/img/people/" +
+                    character.uid +
+                    ".jpg"
+                  }
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body p-1">
+                  <h5 className="card-title">{character.properties.name}</h5>
+                  <p className="card-text m-0">
+                    Diameter: {character.properties.height}
                   </p>
-				  <Link to="/single/:theid"> 
-                  <button className="btn btn-grad">
-                    More info
-                  </button>
-				  </Link>
-				  <button href="#" className="btn btn2 btn-grad">
-				  <i className="fa fa-heart" />
-                  </button>
+                  <p className="card-text m-0">
+                    Population: {character.properties.mass}
+                  </p>
+                  <p className="card-text m-0">
+                    Climate: {character.properties.hair_color}
+                  </p>
+                  <p className="card-text m-0">
+                    Terrain: {character.properties.skin_color}
+                  </p>
+
+                  <div className="rounded mx-auto d-block">
+                    <Link to={/planets/ + character.uid}>
+                      <button className="btn btn-grad" onClick={() =>
+                        actions.getOnePlanet(character.uid)
+                      }>More info</button>
+                    </Link>
+                    <button
+                      href="#"
+                      className="btn btn2 btn-grad"
+                      onClick={() =>
+                        actions.updateFavorites(character.properties.name)
+                      }
+                    >
+                      <i className="fa fa-heart" />
+                    </button>
+                  </div>
                 </div>
               </div>
             );
           })}
-
-		  
         </div>
-
       </div>
     </div>
+
+
+
+
+    {/* PLANETAS */}
+  <div>
+    <div className="text-center mt-3">
+      <h1>Planets</h1>
+      <div className="container">
+        <div className="row scrolling-wrapper-flexbox ">
+          {store.planets.map((planet) => {
+            return (
+              <div key={planet.uid} className="card p-1">
+                <img
+                  src={
+                    "https://starwars-visualguide.com/assets/img/planets/" +
+                    planet.uid +
+                    ".jpg"
+                  }
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body p-1">
+                  <h5 className="card-title">{planet.properties.name}</h5>
+                  <p className="card-text m-0">
+                    Diameter: {planet.properties.diameter}
+                  </p>
+                  <p className="card-text m-0">
+                    Population: {planet.properties.population}
+                  </p>
+                  <p className="card-text m-0">
+                    Climate: {planet.properties.climate}
+                  </p>
+                  <p className="card-text m-0">
+                    Terrain: {planet.properties.terrain}
+                  </p>
+
+                  <div className="rounded mx-auto d-block">
+                    <Link to={/planets/ + planet.uid}>
+                      <button className="btn btn-grad" onClick={() =>
+                        actions.getOnePlanet(planet.uid)
+                      }>More info</button>
+                    </Link>
+                    <button
+                      href="#"
+                      className="btn btn2 btn-grad"
+                      onClick={() =>
+                        actions.updateFavorites(planet.properties.name)
+                      }
+                    >
+                      <i className="fa fa-heart" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+
+{/* VEHICULOS */}
+
+    <div className="text-center mt-3">
+      <h1>Vehicles</h1>
+      <div className="container">
+        <div className="row scrolling-wrapper-flexbox ">
+          {store.planets.map((planet) => {
+            return (
+              <div key={planet.uid} className="card p-1">
+                <img
+                  src={
+                    "https://starwars-visualguide.com/assets/img/planets/" +
+                    planet.uid +
+                    ".jpg"
+                  }
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body p-1">
+                  <h5 className="card-title">{planet.properties.name}</h5>
+                  <p className="card-text m-0">
+                    Diameter: {planet.properties.diameter}
+                  </p>
+                  <p className="card-text m-0">
+                    Population: {planet.properties.population}
+                  </p>
+                  <p className="card-text m-0">
+                    Climate: {planet.properties.climate}
+                  </p>
+                  <p className="card-text m-0">
+                    Terrain: {planet.properties.terrain}
+                  </p>
+
+                  <div className="rounded mx-auto d-block">
+                    <Link to={/planets/ + planet.uid}>
+                      <button className="btn btn-grad">More info</button>
+                    </Link>
+                    <button
+                      href="#"
+                      className="btn btn2 btn-grad"
+                      onClick={() =>
+                        actions.updateFavorites(planet.properties.name)
+                      }
+                    >
+                      <i className="fa fa-heart" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
   );
 };
