@@ -57,6 +57,7 @@ export const Home = () => {
                       onClick={() =>
                         actions.updateFavorites(character.properties.name)
                       }
+                      
                     >
                       <i className="fa fa-heart" />
                     </button>

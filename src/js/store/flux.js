@@ -654,6 +654,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       ],
       favorites: [],
+      favoritesFilter: [],
     },
     
     actions: {
@@ -670,20 +671,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         //console.log(arrayPrueba);
         setStore({ planets: arrayPrueba });
       },
-
       getPlanetsInfo: async (e) => {
         const response = await fetch("https://www.swapi.tech/api/planets/" + e);
         const dataPlanetsInfo = await response.json();
         return dataPlanetsInfo.result;
       },
-
       getOnePlanet: async (e) => {
         const response = await fetch("https://www.swapi.tech/api/planets/" + e);
         const dataOnePlanet = await response.json();
         console.log(dataOnePlanet)
         setStore({ onePlanet: dataOnePlanet.result.properties });
       },
-
       getCharacters: async () => {
         const response = await fetch("https://www.swapi.tech/api/people");
         const dataCharacters = await response.json();
@@ -702,7 +700,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         const dataCharactersInfo = await response.json();
         return dataCharactersInfo.result;
       },
-
       getVehicles: async () => {
         const response = await fetch("https://www.swapi.tech/api/vehicles");
         const dataVehicles = await response.json();
@@ -722,11 +719,18 @@ const getState = ({ getStore, getActions, setStore }) => {
         return dataVehiclesInfo.result;
       },
 
-      
+      updateFavorites: (like) => {
+        setStore({ favorites: [...getStore().favorites, like] });
+      },
 
-        updateFavorites: (like) => {
-          setStore({ favorites: [...getStore().favorites, like] });
-        },
+      // deleteFavorites: (id) => {
+      //   const favoritesFilter = favorites.filter((e, index) => index !== id);
+      //   setStore(favoritesFilter);
+      // },
+      deleteFavorites: (id) => {
+        getStore().favoritesFilter = getStore().favorites.filter((e, index) => index !== id);
+        setStore(favoritesFilter);
+      }
 
     },
   };
