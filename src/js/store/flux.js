@@ -203,7 +203,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           __v: 0,
         },
       ],
-      onePlanet: {},
+      onePlanet: [],
       characters:[
         {
           "properties": {
@@ -667,7 +667,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           );
           arrayPrueba.push(prueba);
         }
-        console.log(arrayPrueba);
+        //console.log(arrayPrueba);
         setStore({ planets: arrayPrueba });
       },
 
@@ -680,6 +680,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       getOnePlanet: async (e) => {
         const response = await fetch("https://www.swapi.tech/api/planets/" + e);
         const dataOnePlanet = await response.json();
+        console.log(dataOnePlanet)
         setStore({ onePlanet: dataOnePlanet.result.properties });
       },
 
@@ -691,7 +692,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const prueba = await getActions().getCharactersInfo(
             dataCharacters.results[i].uid
           );
-          arrayPrueba.push(prueba);
+          //arrayPrueba.push(prueba);
         }
         console.log(arrayPrueba);
         setStore({ characters: arrayPrueba });
@@ -712,7 +713,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           );
           arrayPrueba.push(prueba);
         }
-        console.log(arrayPrueba);
+        //console.log(arrayPrueba);
         setStore({ vehicles: arrayPrueba });
       },
       getVehiclesInfo: async (e) => {

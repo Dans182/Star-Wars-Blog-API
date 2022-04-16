@@ -80,13 +80,17 @@ export const Home = () => {
         <div className="row scrolling-wrapper-flexbox ">
           {store.planets.map((planet) => {
             return (
-              <div key={planet.uid} className="card p-1">
+              <div key={planet.uid} className="card p-1 ">
                 <img
                   src={
                     "https://starwars-visualguide.com/assets/img/planets/" +
                     planet.uid +
                     ".jpg"
                   }
+                  onError={({currentTarget}) => {
+                    currentTarget.onerror = null; 
+                    currentTarget.src="https://i.ibb.co/qjVnbF5/c06c9d63bda3f0a823aee1b2f47b0457-1.png";
+                    }}
                   className="card-img-top"
                   alt="..."
                 />
@@ -105,7 +109,7 @@ export const Home = () => {
                     Terrain: {planet.properties.terrain}
                   </p>
 
-                  <div className="rounded mx-auto d-block">
+
                     <Link to={/planets/ + planet.uid}>
                       <button className="btn btn-grad" onClick={() =>
                         actions.getOnePlanet(planet.uid)
@@ -120,7 +124,7 @@ export const Home = () => {
                     >
                       <i className="fa fa-heart" />
                     </button>
-                  </div>
+
                 </div>
               </div>
             );

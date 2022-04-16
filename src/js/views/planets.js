@@ -20,8 +20,12 @@ export const Planets = (props) => {
             src={
               "https://starwars-visualguide.com/assets/img/planets/" +
               store.onePlanet.uid +
-              ".jpg"
-            }
+              ".jpg"}
+              onError={({currentTarget}) => {
+                currentTarget.onerror = null; 
+                currentTarget.src="https://i.ibb.co/qjVnbF5/c06c9d63bda3f0a823aee1b2f47b0457-1.png";
+                }}
+            
             className="card-img-top"
             alt="..."
           />
