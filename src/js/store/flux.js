@@ -203,7 +203,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           __v: 0,
         },
       ],
-      onePlanet: [],
+      onePlanet: {},
       characters:[
         {
           "properties": {
@@ -679,9 +679,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       getOnePlanet: async (e) => {
         const response = await fetch("https://www.swapi.tech/api/planets/" + e);
         const dataOnePlanet = await response.json();
-        console.log(dataOnePlanet)
-        setStore({ onePlanet: dataOnePlanet.result.properties });
+        //dataOnePlanet.result.properties.uid = e;
+        setStore({ onePlanet: {...dataOnePlanet.result.properties, uid:e} });
       },
+
       getCharacters: async () => {
         const response = await fetch("https://www.swapi.tech/api/people");
         const dataCharacters = await response.json();
@@ -720,17 +721,14 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       updateFavorites: (like) => {
-        setStore({ favorites: [...getStore().favorites, like] });
+        const favorites = getStore().favorites;
+        if (!favorites.includes(like)){
+          setStore({ favorites: [...getStore().favorites, like] });
+        }
+        else {
+          setStore({favorites: favorites.filter((e) => e !== like)})
+        }
       },
-
-      // deleteFavorites: (id) => {
-      //   const favoritesFilter = favorites.filter((e, index) => index !== id);
-      //   setStore(favoritesFilter);
-      // },
-      deleteFavorites: (id) => {
-        getStore().favoritesFilter = getStore().favorites.filter((e, index) => index !== id);
-        setStore(favoritesFilter);
-      }
 
     },
   };

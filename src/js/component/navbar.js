@@ -34,9 +34,26 @@ export const Navbar = () => {
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             
             {store.favorites.map((like, i) => {
+            let character = store.characters.find(character => character.properties.name == like);
+            let planet = store.planets.find(planet => planet.properties.name == like);
+            let vehicle = store.vehicles.find(vehicle => vehicle.properties.name == like);
+            let id = 0;
+            let type = "";
+            if (character) {
+              id = character.uid
+              type = "/characters/"
+            }else if (planet) {
+              id = planet.uid
+              type = "/planets/"
+            } else if (vehicle) {
+              id = vehicle.uid
+              type = "/vehicles/"
+            }
+
             return (
+
               <li key={i}>
-                {like} 
+              <Link to={type + id}>{like}</Link> 
               </li>)})}
             </ul>
           </div>

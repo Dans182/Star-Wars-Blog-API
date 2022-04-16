@@ -52,7 +52,7 @@ export const Home = () => {
                       }>More info</button>
                     </Link>
                     <button
-                      href="#"
+                      
                       className="btn btn2 btn-grad"
                       onClick={() =>
                         actions.updateFavorites(character.properties.name)
@@ -61,6 +61,7 @@ export const Home = () => {
                     >
                       <i className="fa fa-heart" />
                     </button>
+
                   </div>
                 </div>
               </div>
@@ -112,9 +113,7 @@ export const Home = () => {
 
 
                     <Link to={/planets/ + planet.uid}>
-                      <button className="btn btn-grad" onClick={() =>
-                        actions.getOnePlanet(planet.uid)
-                      }>More info</button>
+                      <button className="btn btn-grad">More info</button>
                     </Link>
                     <button
                       href="#"
