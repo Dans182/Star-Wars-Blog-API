@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/loading.css";
 
 export const Characters = (props) => {
   const { store, actions } = useContext(Context);
@@ -37,14 +38,12 @@ export const Characters = (props) => {
               <p className="card-text m-0">
                 Height: {store.oneCharacter.height}
               </p>
+              <p className="card-text m-0">Mass: {store.oneCharacter.mass}</p>
               <p className="card-text m-0">
-              Mass: {store.oneCharacter.mass}
+                Hair color: {store.oneCharacter.hair_color}
               </p>
               <p className="card-text m-0">
-              Hair color: {store.oneCharacter.hair_color}
-              </p>
-              <p className="card-text m-0">
-              Skin Color: {store.oneCharacter.skin_color}
+                Skin Color: {store.oneCharacter.skin_color}
               </p>
 
               <Link to="/">
@@ -54,7 +53,15 @@ export const Characters = (props) => {
           </div>
         </div>
       ) : (
-        ""
+        <div className="loader mx-auto mt-5">
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+        </div>
       )}
     </div>
   );

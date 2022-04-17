@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/loading.css";
 
 export const Planets = (props) => {
   const { store, actions } = useContext(Context);
@@ -54,7 +55,15 @@ export const Planets = (props) => {
           </div>
         </div>
       ) : (
-        ""
+        <div className="loader mx-auto mt-5">
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+          <div className="loader-square"></div>
+        </div>
       )}
     </div>
   );
