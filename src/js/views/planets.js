@@ -30,7 +30,7 @@ export const Planets = (props) => {
                   "https://i.ibb.co/qjVnbF5/c06c9d63bda3f0a823aee1b2f47b0457-1.png";
               }}
               className="card-img-top"
-              alt="..."
+              alt="default.404.picture"
             />
 
             <div className="card-body p-1">

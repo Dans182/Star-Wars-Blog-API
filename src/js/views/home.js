@@ -28,7 +28,7 @@ export const Home = () => {
                     ".jpg"
                   }
                   className="card-img-top"
-                  alt="..."
+                  alt="character.picture"
                 />
                 <div className="card-body p-1">
                   <h5 className="card-title">{character.properties.name}</h5>
@@ -94,7 +94,7 @@ export const Home = () => {
                     currentTarget.src="https://i.ibb.co/qjVnbF5/c06c9d63bda3f0a823aee1b2f47b0457-1.png";
                     }}
                   className="card-img-top"
-                  alt="..."
+                  alt="planet.picture"
                 />
                 <div className="card-body p-1">
                   <h5 className="card-title">{planet.properties.name}</h5>
@@ -149,7 +149,7 @@ export const Home = () => {
                     ".jpg"
                   }
                   className="card-img-top"
-                  alt="..."
+                  alt="vehicle.picture"
                 />
                 <div className="card-body p-1">
                   <h5 className="card-title">{vehicle.properties.name}</h5>
