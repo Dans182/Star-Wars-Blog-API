@@ -654,6 +654,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           "__v": 0
         }
       ],
+      oneVehicle: {},
       favorites: [],
       favoritesFilter: [],
     },
@@ -726,7 +727,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         const dataVehiclesInfo = await response.json();
         return dataVehiclesInfo.result;
       },
-
+      getOneVehicle: async (e) => {
+        const response = await fetch("https://www.swapi.tech/api/vehicles/" + e);
+        const dataOneVehicle = await response.json();
+        //dataOnePlanet.result.properties.uid = e;
+        setStore({ oneVehicle: {...dataOneVehicle.result.properties, uid:e} });
+      },
       updateFavorites: (like) => {
         const favorites = getStore().favorites;
         if (!favorites.includes(like)){

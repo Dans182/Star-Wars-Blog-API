@@ -23,7 +23,7 @@ export const Navbar = () => {
         <Link to="/">
           <div className="dropdown">
             <button
-              className="btn btn-primary dropdown-toggle"
+              className="btn btn-grad dropdown-toggle"
               type="button"
               id="dropdownMenuButton1"
               data-bs-toggle="dropdown"
@@ -53,7 +53,7 @@ export const Navbar = () => {
 
             return (
 
-              <li key={i}>
+              <li key={i} className="text-center">
               <Link to={type + id}>{like}</Link> 
               </li>)})}
             </ul>

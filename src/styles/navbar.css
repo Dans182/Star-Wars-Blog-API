@@ -4,3 +4,27 @@
     padding: 0 0 1px 3px;
     margin: 0;
 }
+.btn-grad {
+    background-image: linear-gradient(
+      to right,
+      #ffb347 0%,
+      #ffcc33 51%,
+      #ffb347 100%
+    );
+  }
+  .btn-grad {
+    margin: 10px;
+    padding: 6px 8px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }

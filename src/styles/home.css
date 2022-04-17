@@ -4,7 +4,6 @@
   overflow-x: auto;
   
 }
-
 .card {
   flex: 0 0 auto;
   width: 250px;
@@ -14,11 +13,9 @@
   margin-left: 5px;
   margin-right: 5px;
 }
-
 .card:hover {
   opacity: 100;
 }
-
 body {
   background-image: url("https://img.wallpapersafari.com/desktop/1600/900/27/28/JTx5Gq.jpg");
   color: white;

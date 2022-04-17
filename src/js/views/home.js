@@ -167,7 +167,7 @@ export const Home = () => {
                   </p>
 
                   <div className="rounded mx-auto d-block">
-                    <Link to={/planets/ + vehicle.uid}>
+                    <Link to={/vehicles/ + vehicle.uid}>
                       <button className="btn btn-grad">More info</button>
                     </Link>
                     <button
