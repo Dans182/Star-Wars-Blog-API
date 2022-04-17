@@ -46,9 +46,9 @@ export const Home = () => {
                   </p>
 
                   <div className="rounded mx-auto d-block">
-                    <Link to={/planets/ + character.uid}>
+                    <Link to={/characters/ + character.uid}>
                       <button className="btn btn-grad" onClick={() =>
-                        actions.getOnePlanet(character.uid)
+                        actions.getOneCharacter(character.uid)
                       }>More info</button>
                     </Link>
                     <button

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import starWarsLogo from "../../img/starwars-logo.png";
 import { Context } from "../store/appContext";
+import "../../styles/navbar.css";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -28,7 +29,7 @@ export const Navbar = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Favorites {store.favorites.length}
+              Favorites <p className="d-inline counter">{store.favorites.length} </p>
 		
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">

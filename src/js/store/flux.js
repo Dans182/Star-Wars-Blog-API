@@ -406,6 +406,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           "__v": 0
         }
       ],
+      oneCharacter: {},
       vehicles: [
         {
           "properties": {
@@ -700,6 +701,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         const response = await fetch("https://www.swapi.tech/api/people/" + e);
         const dataCharactersInfo = await response.json();
         return dataCharactersInfo.result;
+      },
+      getOneCharacter: async (e) => {
+        const response = await fetch("https://www.swapi.tech/api/people/" + e);
+        const dataOneCharacter = await response.json();
+        //dataOnePlanet.result.properties.uid = e;
+        setStore({ oneCharacter: {...dataOneCharacter.result.properties, uid:e} });
       },
       getVehicles: async () => {
         const response = await fetch("https://www.swapi.tech/api/vehicles");
