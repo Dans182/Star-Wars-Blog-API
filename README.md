@@ -1,3 +1,49 @@
+# StarWars Blog Reading List
+
+## Description
+
+This project is a Blog where you can find information of Master is a game where a single player needs to complete a ramen preparation by catching all five necessary ingredients, within a 30 senconds time frame.
+
+<img src="/src/img/captura1.png">
+
+## Backlog
+
+- add more obstacles
+- add player jump to evoid obstacles
+- add input for player name
+
+## DATA STRUCTURE
+
+# js
+
+- index.js
+- layout.js
+
+# Component
+
+- footer.js
+- navbar.js
+
+# Store
+
+- appContext.js
+- flux.js
+
+# Views
+
+- characters.js
+- home.js
+- planets.js
+- vehicles.js
+
+# Styles
+
+- home.css
+- index.css
+- loading.css
+- navbar.css
+
+
 # WebApp boilerplate with React JS
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 

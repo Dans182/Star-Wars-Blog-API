@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+
 
 import { Home } from "./views/home";
 import { Characters } from "./views/characters";
@@ -20,7 +20,7 @@ const Layout = () => {
   return (
     <div>
       <BrowserRouter basename={basename}>
-        <ScrollToTop>
+
           <Navbar />
           <Switch>
             <Route exact path="/">
@@ -40,7 +40,7 @@ const Layout = () => {
             </Route>
           </Switch>
           <Footer />
-        </ScrollToTop>
+
       </BrowserRouter>
     </div>
   );
