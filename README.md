@@ -2,15 +2,20 @@
 
 ## Description
 
-This project is a Blog where you can find information of Master is a game where a single player needs to complete a ramen preparation by catching all five necessary ingredients, within a 30 senconds time frame.
+This project is a Blog where you can find information about Star Wars. I make it using React.js, Flux, Router. All of this with bootstrap and getting the information using fetch from the API:
+
+<a href="https://www.swapi.tech/"> Swapi </a>
+<a href="https://starwars-visualguide.com/#/"> Star Wars Visual Guide </a>
+
 
 <img src="/src/img/captura1.png">
+<img src="/src/img/captura2.png">
+
 
 ## Backlog
 
-- add more obstacles
-- add player jump to evoid obstacles
-- add input for player name
+- Make a visual effect to like buttom.
+- Do a search bar
 
 ## DATA STRUCTURE
 
