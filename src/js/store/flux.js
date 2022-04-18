@@ -744,9 +744,11 @@ const getState = ({ getStore, getActions, setStore }) => {
       updateFavorites: (like) => {
         const favorites = getStore().favorites;
         if (!favorites.includes(like)) {
-          setStore({ favorites: [...getStore().favorites, like] });
+          setStore({ favorites: [...getStore().favorites, like] })
+          true;
         } else {
-          setStore({ favorites: favorites.filter((e) => e !== like) });
+          setStore({ favorites: favorites.filter((e) => e !== like) })
+          false;
         }
       },
     },

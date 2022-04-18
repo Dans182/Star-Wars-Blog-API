@@ -45,9 +45,9 @@ export const Home = () => {
                     Skin Color: {character.properties.skin_color}
                   </p>
 
-                  <div className="rounded mx-auto d-block">
+                  <div className="rounded">
                     <Link to={/characters/ + character.uid}>
-                      <button className="btn btn-grad" onClick={() =>
+                      <button className="btn btn-grad " onClick={() =>
                         actions.getOneCharacter(character.uid)
                       }>More info</button>
                     </Link>
@@ -175,6 +175,7 @@ export const Home = () => {
                       className="btn btn2 btn-grad"
                       onClick={() =>
                         actions.updateFavorites(vehicle.properties.name)
+                        
                       }
                     >
                       <i className="fa fa-heart" />
