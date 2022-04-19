@@ -407,6 +407,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       oneCharacter: {},
+      next: "https://www.swapi.tech/api/vehicles/",
       vehicles: [
         {
           properties: {
@@ -693,7 +694,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const prueba = await getActions().getCharactersInfo(
             dataCharacters.results[i].uid
           );
-          //arrayPrueba.push(prueba);
+          arrayPrueba.push(prueba);
         }
         console.log(arrayPrueba);
         setStore({ characters: arrayPrueba });
