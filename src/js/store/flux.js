@@ -2,21 +2,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			vehicles: [],
-			vehicleInfo:{}
+			next: "https://www.swapi.tech/api/vehicles/",
+			favourites: [],
 		},
 		actions: {
 			getVehicles: async() => {
-				const  response = await fetch("https://www.swapi.tech/api/vehicles/");
+				const store = getStore();
+				const response = await fetch(store.next);
 				const vehiclesAPI = await response.json();
-				setStore({vehicles:vehiclesAPI.results});
+				let vehiclesfullAPI = [];
+				setStore({next:vehiclesAPI.next});
+				
+				for (let j=0; j<vehiclesAPI.results.length; j++){
+					const  response = await fetch("https://www.swapi.tech/api/vehicles/"+vehiclesAPI.results[j].uid);
+					const vehicleAPI = await response.json();
+					setStore({vehicles:[...getStore().vehicles,vehicleAPI.result]});
+				}
+			//	setStore({vehicles:[...getStore().vehicles,vehiclesfullAPI]});
+				console.log(getStore().vehicles);
 			},
-			getVehicleInfo: async(e) => {
-				const  response = await fetch("https://www.swapi.tech/api/vehicles/"+e);
-				const vehicleAPI = await response.json();
-				setStore({vehicleInfo:vehicleAPI.result.properties});
-				console.log(store.vehicleInfo);
+			updateFavourites: (e)=>{
+				const favourites = getStore().favourites;
+				if (!favourites.includes(e)) {
+				  setStore({ favourites: [...getStore().favourites, e] })
+				  true;
+				} else {
+				  setStore({ favourites: favourites.filter((elem) => elem !== e) })
+				  false;
+				}
 			}
-			
 			}
 		}
 	};

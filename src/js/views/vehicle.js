@@ -8,20 +8,19 @@ export const Vehicle = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  useEffect(() => {
-    actions.getVehicleInfo(params.theid);
-  }, []);
-
-  console.log(store.vehicleInfo);
+  const vehicle = store.vehicles.find((e)=>{
+    return e.uid==params.theid;
+ })
+  console.log(vehicle);
 
   return (
-    <div className="card"  style={{ width: "30rem" }} >
-      <img src="https://via.placeholder.com/300x200.png" className="card-img-top" alt="..." />
+    <div className="card mx-auto"  style={{ width: "30rem" }} >
+      <img src={"https://starwars-visualguide.com/assets/img/vehicles/"+vehicle.uid+".jpg"} className="card-img-top" alt={vehicle.properties.name} />
       <div className="card-body">
-        <h5 className="card-title">{store.vehicleInfo.name}</h5>
+        <h5 className="card-title">{vehicle.properties.name}</h5>
         <p className="card-text">
 		<div>
-			{Object.entries(store.vehicleInfo).map((e,i)=>{
+			{Object.entries(vehicle.properties).map((e,i)=>{
 				return(
 					<div id={i}>
 					<strong>{e[0]}:</strong> {e[1]};
@@ -31,7 +30,7 @@ export const Vehicle = (props) => {
 		</div>
         </p>
         <Link to="/">
-          <span className="btn btn-primary btn-lg mt-3" href="#" role="button">
+          <span className="btn btn-dark btn-lg mt-3" href="#" role="button">
             Back home
           </span>
         </Link>
