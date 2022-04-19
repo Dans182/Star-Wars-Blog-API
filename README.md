@@ -1,3 +1,54 @@
+# StarWars Blog Reading List
+
+## Description
+
+This project is a Blog where you can find information about Star Wars. I make it using React.js, Flux, Router. All of this with bootstrap and getting the information using fetch from the API:
+
+<a href="https://www.swapi.tech/"> Swapi </a><br>
+<a href="https://starwars-visualguide.com/#/"> Star Wars Visual Guide </a>
+
+
+<img src="/src/img/captura1.png">
+<img src="/src/img/captura2.png">
+
+
+## Backlog
+
+- Make a visual effect to like buttom.
+- Do a search bar
+
+## DATA STRUCTURE
+
+# js
+
+- index.js
+- layout.js
+
+# Component
+
+- footer.js
+- navbar.js
+
+# Store
+
+- appContext.js
+- flux.js
+
+# Views
+
+- characters.js
+- home.js
+- planets.js
+- vehicles.js
+
+# Styles
+
+- home.css
+- index.css
+- loading.css
+- navbar.css
+
+
 # WebApp boilerplate with React JS
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 

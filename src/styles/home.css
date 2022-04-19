@@ -1,0 +1,52 @@
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  
+}
+.card {
+  flex: 0 0 auto;
+  width: 250px;
+  background-color: rgba(5, 5, 5, 0.889);
+  opacity: 90%;
+  color: #fff;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.card:hover {
+  opacity: 100;
+}
+body {
+  background-image: url("https://img.wallpapersafari.com/desktop/1600/900/27/28/JTx5Gq.jpg");
+  color: white;
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #ffb347 0%,
+    #ffcc33 51%,
+    #ffb347 100%
+  );
+}
+.btn-grad {
+  margin: 10px;
+  padding: 10px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn2:hover {
+  color: red;
+}
+
