@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import SWLogo from "../../img/Star-Wars-Logo.png";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
+
 
   return (
     <nav className="navbar navbar-light bg-light mb-2 justify-content-around">
@@ -33,7 +34,7 @@ export const Navbar = () => {
                 );
                 
                 return (
-                  <li key={i} className="text-center">
+                  <li key={i} className="text-start ms-2">
                     <Link to={"/vehicle/"+e}>{vehicle.properties.name}</Link>
                   </li>
                 );
