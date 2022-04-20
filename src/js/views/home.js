@@ -5,19 +5,13 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
-  const [sendRequest, setSendRequest] = useState(false);
+
 
   useEffect(() => {
-    actions.getCharacters();
+    //actions.getCharacters();
     //actions.getPlanets();
     //actions.getVehicles()
   }, []);
-
-  useEffect(() => {
-    if (sendRequest) {
-      setSendRequest(false);
-    }
-  }, [sendRequest]);
 
   return (
     // CHARACTERS
@@ -86,12 +80,9 @@ export const Home = () => {
                 <button
                   href="#"
                   className="btn btn-dark"
-                  onClick={() => {
-                    actions.getCharacters();
-                    setSendRequest(true);
-                  }}
+                  onClick={() => actions.getCharacters()}
                 >
-                  More Vehicles
+                  More Characters
                 </button>
               </div>
             </div>
@@ -151,7 +142,7 @@ export const Home = () => {
                           actions.updateFavorites(planet.properties.name)
                         }
                       >
-                        <i className={"fa fa-heart " + changeColor}  />
+                        <i className={"fa fa-heart " + changeColor} />
                       </button>
                     </div>
                   </div>
@@ -209,7 +200,7 @@ export const Home = () => {
                             actions.updateFavorites(vehicle.properties.name)
                           }
                         >
-                          <i className={"fa fa-heart " + changeColor}  />
+                          <i className={"fa fa-heart " + changeColor} />
                         </button>
                       </div>
                     </div>
