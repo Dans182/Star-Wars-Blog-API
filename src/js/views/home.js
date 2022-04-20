@@ -73,9 +73,7 @@ export const Home = () => {
               );
             })}
             <div className="card" style={{ width: "250px" }}>
-              <div className="card-body">
-                <h6 className="card-title"></h6>
-                <p className="card-text"></p>
+              <div className="card-body d-flex align-items-middle">
                 {store.nextCharacters != null ? (
                   <button
                     href="#"
@@ -150,9 +148,7 @@ export const Home = () => {
                 );
               })}
               <div className="card" style={{ width: "250px" }}>
-                <div className="card-body">
-                  <h6 className="card-title"></h6>
-                  <p className="card-text"></p>
+                <div className="card-body d-flex align-items-middle">
                   {store.nextPlanets != null ? (
                     <button
                       href="#"
@@ -224,9 +220,7 @@ export const Home = () => {
                 );
               })}
               <div className="card" style={{ width: "250px" }}>
-                <div className="card-body">
-                  <h6 className="card-title"></h6>
-                  <p className="card-text"></p>
+                <div className="card-body d-flex align-items-middle ">
                   {store.nextVehicles != null ? (
                     <button
                       href="#"
