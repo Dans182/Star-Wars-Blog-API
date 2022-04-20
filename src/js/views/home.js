@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
-
   useEffect(() => {
     //actions.getCharacters();
     //actions.getPlanets();
@@ -77,13 +76,15 @@ export const Home = () => {
               <div className="card-body">
                 <h6 className="card-title"></h6>
                 <p className="card-text"></p>
-                <button
-                  href="#"
-                  className="btn btn-dark"
-                  onClick={() => actions.getCharacters()}
-                >
-                  More Characters
-                </button>
+                {store.nextCharacters != null ? (
+                  <button
+                    href="#"
+                    className="btn btn-dark"
+                    onClick={() => actions.getCharacters()}
+                  >
+                    More Characters
+                  </button>
+                ) : null}
               </div>
             </div>
           </div>
@@ -148,6 +149,21 @@ export const Home = () => {
                   </div>
                 );
               })}
+              <div className="card" style={{ width: "250px" }}>
+                <div className="card-body">
+                  <h6 className="card-title"></h6>
+                  <p className="card-text"></p>
+                  {store.nextPlanets != null ? (
+                    <button
+                      href="#"
+                      className="btn btn-dark"
+                      onClick={() => actions.getPlanets()}
+                    >
+                      More Planets
+                    </button>
+                  ) : null}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -207,6 +223,21 @@ export const Home = () => {
                   </div>
                 );
               })}
+              <div className="card" style={{ width: "250px" }}>
+                <div className="card-body">
+                  <h6 className="card-title"></h6>
+                  <p className="card-text"></p>
+                  {store.nextVehicles != null ? (
+                    <button
+                      href="#"
+                      className="btn btn-dark"
+                      onClick={() => actions.getVehicles()}
+                    >
+                      More Vehicles
+                    </button>
+                  ) : null}
+                </div>
+              </div>
             </div>
           </div>
         </div>

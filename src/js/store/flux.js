@@ -204,6 +204,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       onePlanet: {},
+      nextPlanets: "https://www.swapi.tech/api/planets?page=2&limit=10",
       characters: [
         {
         properties: {
@@ -656,14 +657,16 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       oneVehicle: {},
+      nextVehicles: "https://www.swapi.tech/api/vehicles?page=2&limit=10",
       favorites: [],
       favoritesFilter: [],
     },
 
     actions: {
       getPlanets: async () => {
-        const response = await fetch("https://www.swapi.tech/api/planets");
+        const response = await fetch(getStore().nextPlanets);
         const dataPlanets = await response.json();
+        setStore({nextPlanets: dataPlanets.next})
         let arrayPrueba = [];
         for (let i = 0; i < dataPlanets.results.length; i++) {
           const prueba = await getActions().getPlanetsInfo(
@@ -672,7 +675,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           arrayPrueba.push(prueba);
         }
         //console.log(arrayPrueba);
-        setStore({ planets: arrayPrueba });
+        setStore({ planets: [...getStore().planets.concat(arrayPrueba)] });
       },
       getPlanetsInfo: async (e) => {
         const response = await fetch("https://www.swapi.tech/api/planets/" + e);
@@ -685,7 +688,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         //dataOnePlanet.result.properties.uid = e;
         setStore({ onePlanet: { ...dataOnePlanet.result.properties, uid: e } });
       },
-
       getCharacters: async () => {
         const response = await fetch(getStore().nextCharacters);
         const dataCharacters = await response.json();
@@ -697,7 +699,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           );
           arrayPrueba.push(prueba);
         }
-        console.log(arrayPrueba);
+        //console.log(arrayPrueba);
         setStore({ characters: [...getStore().characters.concat(arrayPrueba)]});
       },
       getCharactersInfo: async (e) => {
@@ -714,8 +716,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
       },
       getVehicles: async () => {
-        const response = await fetch("https://www.swapi.tech/api/vehicles");
+        const response = await fetch(getStore().nextVehicles);
         const dataVehicles = await response.json();
+        setStore({nextVehicles: dataVehicles.next})        
         let arrayPrueba = [];
         for (let i = 0; i < dataVehicles.results.length; i++) {
           const prueba = await getActions().getVehiclesInfo(
@@ -724,7 +727,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           arrayPrueba.push(prueba);
         }
         //console.log(arrayPrueba);
-        setStore({ vehicles: arrayPrueba });
+        setStore({ vehicles: [...getStore().vehicles.concat(arrayPrueba)] });
       },
       getVehiclesInfo: async (e) => {
         const response = await fetch(
