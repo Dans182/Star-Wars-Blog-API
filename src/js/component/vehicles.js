@@ -8,7 +8,7 @@ export const Vehicles = () => {
   const [sendRequest, setSendRequest] = useState(false);
 
   useEffect(() => {
-    actions.getVehicles();
+    actions.getLocalVehicles();
   }, []);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export const Vehicles = () => {
 
   return (
     <div className="container">
-      <h1> Vehicles</h1>
+      <h1> Vehicles {store.vehicles.length} </h1>
      <div className="row d-flex flex-nowrap overflow-auto">
         {store.vehicles.map((e, i) => {
           return (

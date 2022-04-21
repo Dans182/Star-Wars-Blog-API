@@ -4,24 +4,25 @@ const getState = ({ getStore, getActions, setStore }) => {
       vehicles: [],
       next: "https://www.swapi.tech/api/vehicles/",
       favourites: [],
-      ariaExpanded: false,
     },
     actions: {
-      getVehicles: async () => {
-        const store = getStore();
+      getLocalVehicles: async () => {
         const vehiclesLocal = JSON.parse(localStorage.getItem("vehicles"));
-        const nextLocal = JSON.parse(localStorage.getItem("next"));
         if (vehiclesLocal) {
           setStore({ vehicles: vehiclesLocal });
         } else {
-          if (nextLocal) {
+          getActions().getVehicles();
+        }
+      },
+      getVehicles: async () => {
+        const store = getStore();
+        const nextLocal = JSON.parse(localStorage.getItem("next"));
+        if (nextLocal) {
             setStore({ next: nextLocal });
           }
 
           const response = await fetch(store.next);
           const vehiclesAPI = await response.json();
-          setStore({ next: vehiclesAPI.next });
-          localStorage.setItem("next", JSON.stringify(vehiclesAPI.next));
 
           for (let j = 0; j < vehiclesAPI.results.length; j++) {
             const response = await fetch(
@@ -33,13 +34,13 @@ const getState = ({ getStore, getActions, setStore }) => {
               (e) => e.uid == vehicleAPI.result.uid
             );
             if (findID) {
-              return;
             } else {
               setStore({ vehicles: [...store.vehicles, vehicleAPI.result] });
               localStorage.setItem("vehicles", JSON.stringify(store.vehicles));
             }
           }
-        }
+          setStore({ next: vehiclesAPI.next });
+          localStorage.setItem("next", JSON.stringify(vehiclesAPI.next));
       },
       updateFavourites: (e) => {
         const favourites = getStore().favourites;
@@ -49,9 +50,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         } else {
           setStore({ favourites: favourites.filter((elem) => elem !== e) });
         }
-      },
-    },
-  };
-};
+      }
+    }
+  }
+} 
 
 export default getState;

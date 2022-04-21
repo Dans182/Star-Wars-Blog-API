@@ -19,7 +19,7 @@ export const Navbar = () => {
         <Link to="/">
           <div className="dropdown">
             <button
-              className="btn btn-dark dropdown-toggle"
+              className={"btn btn-dark dropdown-toggle"/* + store.show */}
               type="button"
               id="dropdownMenuButton1"
               data-bs-toggle="dropdown"
@@ -27,12 +27,11 @@ export const Navbar = () => {
             >
               <i className="fa fa-heart" /> {store.favourites.length}
             </button>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <ul className={"dropdown-menu" /* + store.show */} aria-labelledby="dropdownMenuButton1">
               {store.favourites.map((e,i) => {
                 let vehicle = store.vehicles.find(
                   (el) => el.uid == e
-                );
-                
+                );  
                 return (
                   <li key={i} className="text-start ms-2">
                     <Link to={"/vehicle/"+e}>{vehicle.properties.name}</Link>
