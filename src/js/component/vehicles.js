@@ -8,7 +8,7 @@ export const Vehicles = () => {
   const [sendRequest, setSendRequest] = useState(false);
 
   useEffect(() => {
-    actions.getVehicles();
+    actions.getLocalVehicles();
   }, []);
 
   useEffect(() => {
@@ -19,14 +19,14 @@ export const Vehicles = () => {
 
   return (
     <div className="container">
-      <h1> Vehicles title </h1>
+      <h1> Vehicles {store.vehicles.length} </h1>
      <div className="row d-flex flex-nowrap overflow-auto">
         {store.vehicles.map((e, i) => {
           return (
             <div key={e.uid} className="card" style={{ width: "250px" }}>
               <img
                 src={"https://starwars-visualguide.com/assets/img/vehicles/"+e.uid+".jpg"}
-                className="card-img-top"
+                className="card-img-top mt-2"
                 alt={e.properties.name}
                 width="200"
               />
@@ -43,7 +43,9 @@ export const Vehicles = () => {
                   +
                   </button>
                 </Link>
-                <button href="#" className="btn btn2 btn-grad" onClick={()=>{actions.updateFavourites(e.uid)}}>
+                <button href="#" className="btn btn2 btn-grad" onClick={()=>{
+                  actions.updateFavourites(e.uid);
+                  }}>
                   <i className="fa fa-heart" />
                 </button>
               </div>
