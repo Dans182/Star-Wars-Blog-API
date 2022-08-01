@@ -9,7 +9,8 @@
 	"scripts": {
 		"start": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0 --port 3000",
 		"build": "webpack --config webpack.prod.js",
-		"deploy": "node deploy-to-github.js"
+		"deploy": "node deploy-to-github.js",
+		"build:dev": "webpack -m -c ./webpack.config.js -c ./webpack.dev.js"
 	},
 	"author": {
 		"name": "Alejandro Sanchez",
@@ -74,6 +75,7 @@
 		]
 	},
 	"dependencies": {
+		"@vercel/static-build": "^1.0.12",
 		"prop-types": "^15.7.2",
 		"query-string": "^7.0.1",
 		"react": "^17.0.2",
