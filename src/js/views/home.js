@@ -7,9 +7,9 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    //actions.getCharacters();
-    //actions.getPlanets();
-    //actions.getVehicles()
+    actions.getCharacters();
+    actions.getPlanets();
+    actions.getVehicles();
   }, []);
 
   return (

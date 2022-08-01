@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      //planets: [],
       planets: [
         {
           properties: {
@@ -205,6 +206,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       ],
       onePlanet: {},
       nextPlanets: "https://www.swapi.tech/api/planets?page=2&limit=10",
+      //characters:[],
       characters: [
         {
         properties: {
@@ -409,6 +411,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     ],
       oneCharacter: {},
       nextCharacters: "https://www.swapi.tech/api/people?page=2&limit=10",
+      //vehicles: [],
       vehicles: [
         {
           properties: {
