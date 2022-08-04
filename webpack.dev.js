@@ -12,5 +12,19 @@ if(process.env.GITPOD_WORKSPACE_URL){
 
 module.exports = merge(common, {
     mode: 'development',
-
+    devtool: 'cheap-module-source-map',
+    devServer: {
+        port,
+        hot: true,
+        allowedHosts: "all",
+        historyApiFallback: true,
+        static: {
+          directory: path.resolve(__dirname, "dist"),
+        },
+        client: {
+          webSocketURL: publicUrl
+        },
+    },
+    plugins: []
 });
+//si borro desde linea 15 hasta la 28, no se ejecuta el servidor de desarrollo. Me da Invalid Host. Hay que agregar todas esas lineas para que se pueda ejecutar... Yo creo que se borraron todas estas lineas cuando instalé VERCEL.
