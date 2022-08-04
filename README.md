@@ -123,7 +123,7 @@ const MyComponentSuper = () => {
   const { store, actions } = useContext(Context);
   return <div>{/* you can use your actions or store inside the html */}</div>
 }
-```
+``` 
 
 ## Publish your website!
 
