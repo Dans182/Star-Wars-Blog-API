@@ -7,7 +7,6 @@ This project is a Blog where you can find information about Star Wars. I make it
 <a href="https://www.swapi.tech/"> Swapi </a><br>
 <a href="https://starwars-visualguide.com/#/"> Star Wars Visual Guide </a>
 
-
 <img src="/src/img/captura1.png">
 <img src="/src/img/captura2.png">
 
